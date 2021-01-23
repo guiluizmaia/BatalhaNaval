@@ -7,10 +7,35 @@
     <link rel="stylesheet" href="efeito.css">
 </head>
 <body>
+    
     <table >
-        <tr><td><a href="#"><span></span><span></span>1 , 1</a></td> <td> <a href="#"><span></span><span></span>1 , 2</a> </td> <td> <a href="#"><span></span><span></span>1 , 3</a> </td> <td><a href="#"><span></span><span></span>1 , 4</a></td> <td> <a href="#"><span></span><span></span>1 , 5</a> </td> <td> <a href="#"><span></span><span></span>1 , 6</a> </td> </tr>
-        <tr><td><a href="#"><span></span><span></span>2 , 1</a></td> <td> <a href="#"><span></span><span></span>2 , 2</a> </td> <td> <a href="#"><span></span><span></span>2 , 3</a> </td> <td><a href="#"><span></span><span></span>2 , 4</a></td> <td> <a href="#"><span></span><span></span>2 , 5</a> </td> <td> <a href="#"><span></span><span></span>2 , 6</a> </td> </tr>
-        <tr><td><a href="#"><span></span><span></span>3 , 1</a></td> <td> <a href="#"><span></span><span></span>3 , 2</a> </td> <td> <a href="#"><span></span><span></span>3 , 3</a> </td> <td><a href="#"><span></span><span></span>3 , 4</a></td> <td> <a href="#"><span></span><span></span>3 , 5</a> </td> <td> <a href="#"><span></span><span></span>3 , 6</a> </td> </tr>
+        <tr><td><a href="javascript:clicou('1-1')" id="1-1"><span></span><span></span>1 , 1</a></td> <td> <a href="javascript:clicou('1-2')" id="1-2"><span></span><span></span>1 , 2</a> </td> <td> <a href="javascript:clicou('1-3')" id="1-3"><span></span><span></span>1 , 3</a> </td> <td><a href="javascript:clicou('1-4')" id="1-4"><span></span><span></span>1 , 4</a></td> <td> <a href="javascript:clicou('1-5')" id="1-5"><span></span><span></span>1 , 5</a> </td> <td> <a href="javascript:clicou('1-6')" id="1-6"><span></span><span></span>1 , 6</a> </td> </tr>
+        <tr><td><a href="javascript:clicou('2-1')" id="2-1"><span></span><span></span>2 , 1</a></td> <td> <a href="javascript:clicou('2-2')" id="2-2"><span></span><span></span>2 , 2</a> </td> <td> <a href="javascript:clicou('2-3')" id="2-3"><span></span><span></span>2 , 3</a> </td> <td><a href="javascript:clicou('2-4')" id="2-4"><span></span><span></span>2 , 4</a></td> <td> <a href="javascript:clicou('2-5')" id="2-5"><span></span><span></span>2 , 5</a> </td> <td> <a href="javascript:clicou('2-6')" id="2-6"><span></span><span></span>2 , 6</a> </td> </tr>
+        <tr><td><a href="javascript:clicou('3-1')" id="3-1"><span></span><span></span>3 , 1</a></td> <td> <a href="javascript:clicou('3-2')" id="3-2"><span></span><span></span>3 , 2</a> </td> <td> <a href="javascript:clicou('3-3')" id="3-3"><span></span><span></span>3 , 3</a> </td> <td><a href="javascript:clicou('3-4')" id="3-4"><span></span><span></span>3 , 4</a></td> <td> <a href="javascript:clicou('3-5')" id="3-5"><span></span><span></span>3 , 5</a> </td> <td> <a href="javascript:clicou('3-6')" id="3-6"><span></span><span></span>3 , 6</a> </td> </tr>
      </table>
+     <script>
+        var arr = [];
+        function clicou(num)
+        {
+            var clique = document.getElementById(num);
+            
+            var pos = arr.indexOf(num);
+            
+            if (arr[pos] != num){
+                arr.push(num);                
+                clique.style.color = "#0C720C";
+                clique.style.background = "#7FFF7F";
+                clique.style.boxShadow = "0 0 10px #7FFF7F, 0 0 40px #7FFF7F, 0 0 80px #7FFF7F";
+                console.log(arr);
+            }else{
+                arr.splice(pos, 1);
+                clique.style.color = "#7FFF7F";
+                clique.style.background = "none";
+                clique.style.boxShadow = "none";
+                clique.style.transitionDelay = "0.2";
+                console.log(arr);
+            }
+        }
+    </script>
 </body>
 </html>
